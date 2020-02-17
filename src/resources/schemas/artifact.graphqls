@@ -1,0 +1,23 @@
+type ArtifactType {
+    name: String!
+}
+
+input ArtifactInput {
+    artifactName: String
+}
+
+type ArtifactPayload {
+    ok: Boolean!
+    # httpStatus: HttpStatus # 200, 400, 404
+    message: String
+    artifact: ArtifactType
+    artifacts: [ArtifactType]
+}
+
+type Query {
+    artifacts(workspaceName: String): ArtifactPayload
+}
+
+type Mutation {
+    createArtifact(input: ArtifactInput): ArtifactPayload!
+}

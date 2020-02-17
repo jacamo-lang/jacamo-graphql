@@ -1,0 +1,13 @@
+type WorkspaceType {
+    id: String!
+    name: String!
+    artifacts: [ArtifactType]!
+}
+
+input WorkspaceInput {
+    workspaceName: String
+}
+
+type Mutation {
+    createWorkspace(input: WorkspaceInput): String
+}

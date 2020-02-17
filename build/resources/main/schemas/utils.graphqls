@@ -1,0 +1,5 @@
+interface Payload {
+    ok: Boolean!
+    message: String
+    # httpStatus: HttpStatus!
+}

@@ -1,0 +1,7 @@
+jacamoql
+jacamoql.domain.facade
+jacamoql.domain.service
+jacamoql.graphql.agent
+jacamoql.graphql.artifact
+jacamoql.graphql.utils
+jacamoql.graphql.workspace
