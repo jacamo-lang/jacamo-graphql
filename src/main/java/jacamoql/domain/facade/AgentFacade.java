@@ -36,7 +36,11 @@ public class AgentFacade {
 
         for(String arch: JaCaMoLauncher.getRunner().getAgs().keySet()){
             AgentType agent = new AgentType();
-            agent.setName(JaCaMoLauncher.getRunner().getAgs().get(arch).getAgName());
+            String agName = JaCaMoLauncher.getRunner().getAgs().get(arch).getAgName();
+            agent.setName(agName);
+            // agent.setName(JaCaMoLauncher.getRunner().getAgs().get(arch).getAgName());
+            List<String> beliefs = agentService.getBeliefsByName(agName);
+            agent.setBeliefs(beliefs);
             retArray.add(agent);
         }
         return retArray;
