@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"jacamoql"},{"l":"jacamoql.domain.facade"},{"l":"jacamoql.domain.service"},{"l":"jacamoql.graphql.agent"},{"l":"jacamoql.graphql.artifact"},{"l":"jacamoql.graphql.utils"},{"l":"jacamoql.graphql.workspace"}]

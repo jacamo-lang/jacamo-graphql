@@ -22,8 +22,10 @@ public class AgentFacade {
         if(name != null) {
             Agent agent = agentService.getAgentByName(name);
             String agName = agent.getTS().getUserAgArch().getAgName();
+            List<String> beliefs = agentService.getBeliefsByName(agName);
             AgentType retAgent = new AgentType();
             retAgent.setName(agName);
+            retAgent.setBeliefs(beliefs);
             return retAgent;
         }
         return null;

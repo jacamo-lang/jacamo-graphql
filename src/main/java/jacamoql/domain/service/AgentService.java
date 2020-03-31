@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import jacamo.infra.JaCaMoLauncher;
 import jacamoql.GraphqlPlatform;
 import jason.asSemantics.Agent;
+import jason.asSyntax.Literal;
 
 @Service
 public class AgentService {
@@ -21,6 +22,15 @@ public class AgentService {
             agentArray.add(JaCaMoLauncher.getRunner().getAgs().get(arch).getTS().getAg());
         }
         return agentArray;
+    }
+
+    public List<String> getBeliefsByName(String name) {
+      Agent ag = getAgentByName(name);
+      List<String> bbs = new ArrayList<>();
+      for (Literal l : ag.getBB()) {
+        bbs.add(l.toString());
+      }
+      return bbs;
     }
 
     public List<String> getAgentFocus(String agentName) {

@@ -1,6 +1,7 @@
 type AgentType {
     name: String!
     focus: [String]!
+    beliefs: [String]!
 }
 
 type Query {

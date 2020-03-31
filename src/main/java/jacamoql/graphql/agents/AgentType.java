@@ -4,8 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AgentType {
-    
+
     private String name;
+    private List<String> beliefs;
     private List<String> focus;
 
     public String getName() {
@@ -14,6 +15,15 @@ public class AgentType {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public List<String> getBeliefs() {
+        if( beliefs == null ) { beliefs = new ArrayList<String>(); }
+        return beliefs;
+    }
+
+    public void setBeliefs(List<String> beliefs) {
+        this.beliefs = beliefs;
     }
 
     public List<String> getFocus() {
