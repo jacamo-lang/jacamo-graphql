@@ -1,14 +1,21 @@
+type LiteralType {
+  negation: Boolean!
+  functor: String!
+  arguments: [String]
+  annotations: [String]
+}
+
 type AgentType {
-    name: String!
-    focus: [String]!
-    beliefs: [String]!
+  name: String!
+  focus: [String]!
+  beliefs: [LiteralType]!
 }
 
 type Query {
-    agent(name: String!): AgentType
-    agents: [AgentType]
+  agent(name: String!): AgentType
+  agents: [AgentType]
 }
 
 type Mutation {
-    createAgent: AgentType
+  createAgent: AgentType
 }

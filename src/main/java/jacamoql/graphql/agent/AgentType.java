@@ -6,7 +6,7 @@ import java.util.List;
 public class AgentType {
 
     private String name;
-    private List<String> beliefs;
+    private List<LiteralType> beliefs;
     private List<String> focus;
 
     public String getName() {
@@ -17,12 +17,12 @@ public class AgentType {
         this.name = name;
     }
 
-    public List<String> getBeliefs() {
-        if( beliefs == null ) { beliefs = new ArrayList<String>(); }
+    public List<LiteralType> getBeliefs() {
+        if( beliefs == null ) { beliefs = new ArrayList<LiteralType>(); }
         return beliefs;
     }
 
-    public void setBeliefs(List<String> beliefs) {
+    public void setBeliefs(List<LiteralType> beliefs) {
         this.beliefs = beliefs;
     }
 

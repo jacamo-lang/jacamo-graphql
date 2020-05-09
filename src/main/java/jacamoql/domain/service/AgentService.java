@@ -1,14 +1,13 @@
 package jacamoql.domain.service;
 
-import java.util.List;
-import java.util.ArrayList;
-
-import org.springframework.stereotype.Service;
-
 import jacamo.infra.JaCaMoLauncher;
-import jacamoql.GraphqlPlatform;
 import jason.asSemantics.Agent;
 import jason.asSyntax.Literal;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Service;
 
 @Service
 public class AgentService {
@@ -24,17 +23,16 @@ public class AgentService {
         return agentArray;
     }
 
-    public List<String> getBeliefsByName(String name) {
+    public List<Literal> getAllBeliefs(String name) {
       Agent ag = getAgentByName(name);
-      List<String> bbs = new ArrayList<>();
+      List<Literal> literals = new ArrayList<>();
       for (Literal l : ag.getBB()) {
-        bbs.add(l.toString());
+        literals.add(l);
       }
-      return bbs;
+      return literals;
     }
 
     public List<String> getAgentFocus(String agentName) {
-        // GraphqlPlatform.getProject().getAg(agentName)
         return null;
     }
 }

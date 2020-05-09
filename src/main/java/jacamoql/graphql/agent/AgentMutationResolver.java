@@ -1,13 +1,10 @@
 package jacamoql.graphql.agent;
 
-import java.util.List;
-
 import com.coxautodev.graphql.tools.GraphQLMutationResolver;
-
+import jacamoql.domain.facade.AgentFacade;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import jacamoql.domain.facade.AgentFacade;
 
 @Component
 public class AgentMutationResolver implements GraphQLMutationResolver {

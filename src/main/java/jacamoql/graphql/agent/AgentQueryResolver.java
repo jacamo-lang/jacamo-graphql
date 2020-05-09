@@ -1,13 +1,11 @@
 package jacamoql.graphql.agent;
 
-import java.util.List;
-
 import com.coxautodev.graphql.tools.GraphQLQueryResolver;
-
+import jacamoql.domain.facade.AgentFacade;
+import jason.NoValueException;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
-import jacamoql.domain.facade.AgentFacade;
 
 @Component
 public class AgentQueryResolver implements GraphQLQueryResolver {
@@ -15,7 +13,7 @@ public class AgentQueryResolver implements GraphQLQueryResolver {
     @Autowired
     private AgentFacade agentFacade;
 
-    public AgentType agent(String name) {
+    public AgentType agent(String name) throws NoValueException {
         return agentFacade.getAgent(name);
     }
 
